@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apply filters</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upload images</h1>
+        <%= typeof msg != 'undefined' ? msg  : '' %> 
+        <form action="/upload" method="POST"
+            enctype="multipart/form-data">
+            <div class="file-field input-field">
+                <div class="btn grey">
+                    <span>Open</span>
+                    <input name="m" type="file">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text"
+                    placeholder="Select file..." size="6">
+                </div>
+            </div>
+            <button type="submit" class="btn">Go</button>
+        </form>
+        <br>
+        <img src="<%= typeof file != 'undefined' ? file  : '' %>" 
+        class="responsive-img">
+    </div>
+<script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
